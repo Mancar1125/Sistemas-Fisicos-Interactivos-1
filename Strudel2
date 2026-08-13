@@ -1,0 +1,93 @@
+tcpm(35)
+
+// =====================================================
+// BAJO ORIGINAL
+// =====================================================
+
+let bass = note("a2 e3 f2 c3 g2 d3")
+  .sound("piano")
+  .slow(30)
+  .gain(0.5)
+  .visualid("bass")
+
+$bass: stack(bass, bass.osc())
+
+
+// =====================================================
+// MELODÍA ORIGINAL
+// =====================================================
+
+let melody = note("e4 - d4 - c4 - - - - d4 e4 c4 e4 - d4 - - - - c4 d4 e4 - - - - a4 g4 e4 c4 - d4 - - - - - e4 a4 c5 - - - b4 c5 d5 c5 - a4 - - - - g4 a4 b4 - - - c5 b4 a4 g4 a4 - - - - - - - - - -   e5 - d5 - c5 - - - - d5 e5 c5 e5 - d5 - - - - c5 d5 e5 - - - - a5 g5 e5 c5 - d5 - - - - - e5 a5 c6 - - - b5 c6 d6 c6 - a5 - - - - g5 a5 b5 - - - c6 b5 a5 g5 a5 - - - - - - - - - - e6 - d6 - c6 - - - - d6 e6 c6 e6 - d6 - - - - c6 d6 e6 - - - - a6 g6 e6 c6 - d6 - - - - - e6 a6 c7 - - - b6 c7 d7 c7 - a6 - - - - g6 a6 b6 - - - c7 b6 a6 g6 a6 - - - - - - - - - -  ")
+  .sound("piano")
+  .slow(30)
+  .visualid("melody")
+
+$melody: stack(melody, melody.osc())
+
+
+// =====================================================
+// CONTRAPUNTO ORIGINAL 
+// =====================================================
+
+let counter = note("c5 - b4 - a4 -")
+  .sound("piano")
+  .slow(30)
+  .visualid("counter")
+
+$counter: stack(counter, counter.osc())
+
+
+// =====================================================
+// SAX ORIGINAL 
+// =====================================================
+
+let sax = note("a2 - e2 - f2 - c3 - g2 - d3 -")
+  .sound("sax_vib")
+  .gain(0.3)
+  .slow(30)
+  .visualid("sax")
+
+$sax: stack(sax, sax.osc())
+
+
+// =====================================================
+// PAD
+// =====================================================
+
+let pad = note("c4 - a3 - e4 - g3")
+  .sound("sawtooth")
+  .slow(10)
+  .attack(0.4)
+  .release(6)
+  .lpf(700)
+  .gain(0.12)
+  .room(0.8)
+  .visualid("pad")
+
+$pad: stack(pad, pad.osc())
+
+
+// =====================================================
+// SUB / REFUERZO GRAVE
+// =====================================================
+
+let sub = note("a1 - f1 - c2 - g1 -")
+  .sound("gm_ocarina")
+  .slow(30)
+  .gain(0.8)
+  .lpf(300)
+  .visualid("sub")
+
+$sub: stack(sub, sub.osc())
+
+// =====================================================
+// GUITARRA ACÚSTICA
+// =====================================================
+
+let ostinato = note("a2 a2 e3 a2 f2 f2 c3 f2 c3 c3 g3 c3 g2 g2 d3 g2")
+  .sound("gm_acoustic_guitar_nylon")
+  .slow(10)
+  .gain(0.50)
+  .visualid("ostinato")
+
+$ostinato: stack(ostinato, ostinato.osc())
